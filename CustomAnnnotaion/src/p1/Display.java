@@ -1,7 +1,7 @@
-package com.premit.demo;
+package p1;
 
 public class Display {
-	
+
 	@MyAnnotation
 	public void m1() {
 		System.out.println("==m1==");
@@ -15,4 +15,5 @@ public class Display {
 	public void m3() {
 		System.out.println("==m3==");
 	}
+
 }

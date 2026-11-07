@@ -1,25 +1,18 @@
-package com.premit.demo;
+package p1;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class DemoMain {
-
 	public static void main(String[] args) throws IllegalAccessException, InvocationTargetException {
+		Display ob = new  Display();
 		
-		Display d = new Display();
-
-		Class c = Display.class;
-		
-		Method[] m = c.getDeclaredMethods();
-		
+		Class d = Display.class;
+		Method[] m = d.getDeclaredMethods();
 		for(Method method : m) {
 			if(method.isAnnotationPresent(MyAnnotation.class)) {
-				method.invoke(d);
+				method.invoke(ob);
 			}
 		}
-		
-		
 	}
-
 }
