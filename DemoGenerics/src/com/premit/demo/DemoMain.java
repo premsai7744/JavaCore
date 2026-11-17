@@ -22,7 +22,7 @@ public class DemoMain {
 		ArrayList<String> al2 = new ArrayList();
 		al2.add("101");
 		al2.add("102");
-		al2.add(103);//At compile time only showing error you cannot add Integer value, you should add only String value.: TYPE SAFETY
+		//al2.add(103);//At compile time only showing error you cannot add Integer value, you should add only String value.: TYPE SAFETY
 
 		
 		
