@@ -2,6 +2,7 @@ package com.premit.demo.commonmethods;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.ListIterator;
 
 public class DemoMethods {
 	public static void main(String[] args) {
@@ -210,6 +211,56 @@ public class DemoMethods {
 	       {
 	           Integer a = (Integer)o;
 	           System.out.println(a);
+	       }
+	       
+	       //replaceAll(UnaryOperator) : To replace ele's in the list with new value.
+	       ArrayList<Integer> list10 = new ArrayList<Integer>();
+	       list10.add(1);
+	       list10.add(2);
+	       list10.add(3);
+	       list10.add(4);
+	       list10.add(5);
+	
+	       System.out.println("list10:"+list10);
+	       list10.replaceAll((k)->k*10);
+	       
+	       System.out.println("==After replaceAll()==");
+	       System.out.println("list10:"+list10);
+	       
+	       //listIterator();
+	       ArrayList<Integer> list11 = new ArrayList<Integer>();
+	       list11.add(1);
+	       list11.add(2);
+	       list11.add(3);
+	       list11.add(4);
+	       list11.add(5);
+	       
+	       System.out.println("==listIterator()==");
+	       System.out.println("Iterating ele's in forward direction:");
+	       ListIterator<Integer> listIterator = list11.listIterator();
+	       while(listIterator.hasNext()) {
+	    	   	Integer ob = listIterator.next();
+	    	   	System.out.println(ob);
+	       }
+	       System.out.println("Iterating ele's in backward direction:");
+	       ListIterator<Integer> listIterator2 = list11.listIterator();
+	       while(listIterator.hasPrevious()) {
+	    	   	Integer ob = listIterator.previous();
+	    	   	System.out.println(ob);
+	       }
+	      
+	       System.out.println("==listIterator(int)==");
+	       System.out.println("Iterating ele's in forward direction:");
+	       ListIterator<Integer> listIterator3 = list11.listIterator(2);
+	       while(listIterator3.hasNext()) {
+	    	   	Integer ob = listIterator3.next();
+	    	   	System.out.println(ob);
+	       }
+	       System.out.println("Iterating ele's in backward direction:");
+	       ListIterator<Integer> listIterator4 = list11.listIterator(5);
+	       while(listIterator4.hasPrevious()) {
+	    	   	Integer ob = listIterator4.previous();
+	    	   	System.out.println(ob);
 	       }
 	}
 }
