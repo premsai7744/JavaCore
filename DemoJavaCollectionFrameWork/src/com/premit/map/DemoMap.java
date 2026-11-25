@@ -7,6 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.function.BiPredicate;
 
 public class DemoMap {
 	public static void main(String[] args) {
@@ -140,5 +141,48 @@ public class DemoMap {
 		{
 			System.out.println(entry.getKey()+" "+entry.getValue().toString());
 		}
+		
+		//to retrieve ele's which is  have price less than 1 lakh 
+		HashMap<String, Product> hashMap6 = new HashMap<String, Product>();
+		
+		hashMap6.put("A101", new Product("IPhone18", 80000.00d, 1));
+		hashMap6.put("A102", new Product("Samsungs26", 100000.00d, 2));
+		hashMap6.put("A103", new Product("Redmi20", 120000.00d, 3));
+		hashMap6.put("A104", new Product("PocoX8", 30000.00d, 4));
+	
+		System.out.println("==hashMap6==");
+		System.out.println(hashMap6);
+		
+		BiPredicate<String, Product> biPredicate1 = (k,v)->{
+			if(v.getPrice()<100000) {
+				return true;
+			}else {
+				return false;
+			}
+		};
+		
+		System.out.println("==Products price less than 1 lakh==");
+		hashMap6.forEach((k,v)->{
+			if(biPredicate1.test(k, v)) {
+				System.out.println(k+" "+v);
+			}
+		});
+		
+		//to retrieve ele's which is  have qty less than 3
+		BiPredicate<String, Product> biPredicate2 = (k,v)->{
+			if(v.getQty()<3) {
+				return true;
+			}else {
+				return false;
+			}
+		};
+		
+		System.out.println("==Products qty less than 3==");
+		hashMap6.forEach((k,v)->{
+			if(biPredicate2.test(k, v)) {
+				System.out.println(k+" "+v);
+			}
+		});
+	
 	}
 }
